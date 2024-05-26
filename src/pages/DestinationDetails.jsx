@@ -6,7 +6,7 @@ const DestinationDetails = ({ data }) => {
         <div>
             <div className="container grid grid-cols-1 md:grid-cols-2 gap-8 bg-gray-100 dark:bg-[#111111] dark:text-white py-10">
                 <div>
-                    <img className="h-full" src="https://www.tourmyindia.com/blog//wp-content/uploads/2015/11/best-things-to-do-in-coorg.jpg" alt="" />
+                    <img className="h-full rounded" src="https://www.tourmyindia.com/blog//wp-content/uploads/2015/11/best-things-to-do-in-coorg.jpg" alt="" />
                 </div>
                 <div>
                     <h1 className="text-3xl font-bold text-[#689A5E] mb-5">Coorg, Karnataka</h1>
@@ -20,7 +20,7 @@ const DestinationDetails = ({ data }) => {
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates dolorum sapiente natus porro debitis at laborum rerum hic omnis molestias expedita, modi neque id, aut quod corrupti unde ipsa voluptas.</p>
                     </div>
                     <div>
-                        <h1 className="text-3xl font-bold text-[#689A5E] mb-3">Fauna</h1>
+                        <h1 className="text-3xl font-bold text-[#689A5E] mt-4 mb-3">Fauna</h1>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates dolorum sapiente natus porro debitis at laborum rerum hic omnis molestias expedita, modi neque id, aut quod corrupti unde ipsa voluptas.</p>
                     </div>
                 </div>
