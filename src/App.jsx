@@ -7,6 +7,8 @@ import Destination from "./pages/Destination"
 import Tours from "./pages/Tours"
 import Contact from "./pages/Contact"
 
+export const URL = `http://localhost:3000`
+
 const App = () => {
   return (
     <BrowserRouter>

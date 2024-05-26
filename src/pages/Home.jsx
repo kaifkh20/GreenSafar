@@ -1,4 +1,4 @@
-import React from 'react'
+
 import NatureVid from "../assets/video.mp4"
 import { ReactTyped } from "react-typed";
 import { HomeCont } from '../HomeCont';
@@ -6,10 +6,9 @@ import Slider from "react-slick";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-
-
-
 const Home = () => {
+
+    
 
     var settings = {
         dots: true,
@@ -49,7 +48,7 @@ const Home = () => {
         ],
     };
 
-    console.log(HomeCont);
+    // console.log(HomeCont);
     return (
         <div>
             <div className="relative bg-white/10 dark:bg-[#111111]/20 duration-200 h-[400px] md:h-[400px]">
