@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { HomeCont } from '../HomeCont';
 import { URL } from '../App';
 import he from "he"
+import { useNavigate } from 'react-router-dom';
 
 async function fetchAllDestination() {
     try {
@@ -19,6 +20,8 @@ async function fetchAllDestination() {
 
 
 const Destination = () => {
+
+    const navigate = useNavigate();
 
     const [HomeData,setHomeData] = useState([])
 
@@ -54,7 +57,7 @@ const Destination = () => {
                             <p className="text-black/80 dark:text-white">{he.decode(data.short_description).substring(3,100)+"..."}</p>
                         </div>
                     </div>
-                    <button className="ml-[200px] mt-6 md:ml-[320px] md:mt-6 px-4 py-2 bg-[#68A95E]/80 text-white rounded-xl hover:bg-[#68A95E]">Know More</button>
+                    <button className="ml-[200px] mt-6 md:ml-[320px] md:mt-6 px-4 py-2 bg-[#68A95E]/80 text-white rounded-xl hover:bg-[#68A95E]" onClick={() => navigate("/destinationDetails")}>Know More</button>
                     {/* <p className="text-9xl text-gray-500 absolute top-0 right-0 font-serif text-primary/20">,,</p> */}
                 </div>
             ))}
