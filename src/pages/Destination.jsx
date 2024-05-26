@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react'
 import { HomeCont } from '../HomeCont';
 import { URL } from '../App';
 import he from "he"
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import striptags from 'striptags';
+
 
 async function fetchAllDestination() {
     try {
@@ -17,14 +19,19 @@ async function fetchAllDestination() {
     }
   }
 
+  
+   
+
+
 
 
 const Destination = () => {
 
-    const navigate = useNavigate();
-
     const [HomeData,setHomeData] = useState([])
 
+    const[error,setError] = useState(false)
+
+   
     useEffect(() => {
         const getSites = async () => {
           try {
@@ -34,6 +41,7 @@ const Destination = () => {
             // console.log(booksData)
             // setError(null)
           } catch (e) {
+            setError(true)
             console.log(e)
             // setError(true)
           }
@@ -41,7 +49,12 @@ const Destination = () => {
         getSites()
         // setIsLoading(false)
       }, [])
-
+      if(error){
+        return(
+          <><h1>ERROR</h1></>
+        )
+      }
+  
       console.log(HomeData);
     return (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 py-10 px-3 dark:bg-black duration-200 ">
@@ -54,10 +67,12 @@ const Destination = () => {
                     <div className="flex flex-col items-centergap-4 dark:text-white">
                         <div className="space-y-2 ">
                             <p className="font-bold text-xl text-gray-500 dark:text-white" >{data.site}</p>
-                            <p className="text-black/80 dark:text-white">{he.decode(data.short_description).substring(3,100)+"..."}</p>
+                            <p className="text-black/80 dark:text-white">{striptags(he.decode(data.short_description)).substring(3,100)+"..."}</p>
                         </div>
                     </div>
-                    <button className="ml-[200px] mt-6 md:ml-[320px] md:mt-6 px-4 py-2 bg-[#68A95E]/80 text-white rounded-xl hover:bg-[#68A95E]" onClick={() => navigate("/destinationDetails")}>Know More</button>
+                    <Link to={`/destination/${data._id}?name=${data.site}`}>
+                    <button href={`/destination/${data._id}?name=${data.site}`}  className="ml-[200px] mt-6 md:ml-[320px] md:mt-6 px-4 py-2 bg-[#68A95E]/80 text-white rounded-xl hover:bg-[#68A95E]">Know More</button>
+                    </Link>
                     {/* <p className="text-9xl text-gray-500 absolute top-0 right-0 font-serif text-primary/20">,,</p> */}
                 </div>
             ))}
