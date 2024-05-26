@@ -6,7 +6,7 @@ const DestinationDetails = ({ data }) => {
         <div>
             <div className="container grid grid-cols-1 md:grid-cols-2 gap-8 bg-gray-100 dark:bg-[#111111] dark:text-white py-10">
                 <div>
-                    <img className="h-full rounded" src="https://www.tourmyindia.com/blog//wp-content/uploads/2015/11/best-things-to-do-in-coorg.jpg" alt="" />
+                    <img className="h-full md:h-[600px] rounded" src="https://www.tourmyindia.com/blog//wp-content/uploads/2015/11/best-things-to-do-in-coorg.jpg" alt="" />
                 </div>
                 <div>
                     <h1 className="text-3xl font-bold text-[#689A5E] mb-5">Coorg, Karnataka</h1>
